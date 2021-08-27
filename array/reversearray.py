@@ -21,11 +21,28 @@ print(arr)
  """
 
 # using while loop
-arr = [1, 2, 3, 4, 5]
+""" arr = [1, 2, 3, 4, 5]
 start = 0
 end = len(arr) - 1
 while end > start:
     arr[start], arr[end] = arr[end], arr[start]
     start += 1
     end -= 1
+print(arr)
+ """
+
+# recersive approach
+arr = [1, 2, 3, 4, 5]
+start = 0
+end = len(arr)-1
+
+
+def reversearray(arr, start, end):
+    if start > end:
+        return
+    arr[start], arr[end] = arr[end], arr[start]
+    reversearray(arr, start+1, end-1)
+
+
+reversearray(arr, start, end)
 print(arr)
